@@ -47,7 +47,10 @@ def findWithSalt(s, hash):
 def main():
 	# Get starting time
 	start = time.time()
-	if len(sys.argv) == 2:		# if a single hashcode is provided
+	if len(sys.argv) == 1:			# if no arguments are given then quit
+		print("No arguments given...\nQuiting!")
+		sys.exit()
+	elif len(sys.argv) == 2:		# if a single hashcode is provided
 		print("\tChecking for Password...")
 		hashIn = sys.argv[1].lower()
 		res = simple(hashIn)

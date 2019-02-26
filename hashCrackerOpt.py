@@ -13,9 +13,10 @@ dict = {}
 # The dictionary is created using a file with these key-value pairs
 def makeDict():
     global dict
-    fin = open('dict.txt', 'r')
-    for line in fin:
-    	dict[line.strip()[0:40]] = line.strip()[41:]
+    for line in list1:
+        h = hashlib.sha1()
+        h.update(line.strip())
+    	dict[h.hexdigest()] = line.strip()
     print("\tReady")  # Prints "Ready" when the dictionary is finished loading
 
 def getFromDict(h):

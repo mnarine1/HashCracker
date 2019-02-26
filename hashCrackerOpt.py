@@ -1,3 +1,9 @@
+# Michael Narine
+# CSC 6980
+# Blockchain & Applications
+# Assignment 2
+# February 25, 2019
+
 import sys
 import time
 import hashlib
@@ -5,7 +11,7 @@ import hashlib
 hashIn = ""
 salt = ""
 count = 0
-list1 = open("passList.txt",'r')
+list = open("passList.txt",'r')
 res = ""
 dict = {}
 
@@ -13,7 +19,7 @@ dict = {}
 # The dictionary is created using a file with these key-value pairs
 def makeDict():
     global dict
-    for line in list1:
+    for line in list:
         h = hashlib.sha1()
         h.update(line.strip())
     	dict[h.hexdigest()] = line.strip()
@@ -29,31 +35,33 @@ def getFromDict(h):
 
 # Checks for password in the list and returns the result
 def simple(hash):
-	result = ""
-	global count
-	for line in list1:
-		count += 1
-		h = hashlib.sha1()
-		temp = line.strip()
-		h.update(temp)
-		if h.hexdigest() == hash:
-			result = temp
-			break
-	return result
+    result = ""
+    global count, list
+    list = open("passList.txt",'r')
+    for line in list:
+        count += 1
+        h = hashlib.sha1()
+        temp = line.strip()
+        h.update(temp)
+        if h.hexdigest() == hash:
+            result = temp
+            break
+    return result
 
 # Checks for a password in the list if a salt term is provided
 def findWithSalt(s, hash):
-	result = ""
-	global count
-	for line in list1:
-		count += 1
-		h = hashlib.sha1()
-		temp = line.strip()
-		h.update(s+temp)
-		if h.hexdigest() == hash:
-			result = temp
-			break
-	return result
+    result = ""
+    global count, list
+    list = open("passList.txt",'r')
+    for line in list:
+        count += 1
+        h = hashlib.sha1()
+        temp = line.strip()
+        h.update(s+temp)
+        if h.hexdigest() == hash:
+            result = temp
+            break
+    return result
 
 
 

@@ -1,3 +1,9 @@
+# Michael Narine
+# CSC 6980
+# Blockchain & Applications
+# Assignment 2
+# February 25, 2019
+
 import sys
 import time
 import hashlib
@@ -68,7 +74,7 @@ def main():
 		print("\tPassword Not Found")
 	# Print the time it took to get a result
 	print("\tTime Elapsed: " + str(time.time() - start))
-	print("\t\tNumber of Attempts: " + str(count))
+	print("\tNumber of Attempts: " + str(count))
 
 
 if __name__ == '__main__':

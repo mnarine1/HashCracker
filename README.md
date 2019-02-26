@@ -12,7 +12,7 @@ This project contains two python scripts:
 
 ## How to run *hashCracker.py*
 
-*hashCracker.py* takes in the hashcodes through command line arguments. If there are no command line arguments, then the user is prompted to enter a hashcode to be decoded. If there is one argument, then the script will find the password without using a salt term. If there are two arguments, then the script will find the salt term given through the second argument, and prepend the decoded salt term to each password in *passList.txt* to find the decoded salted hash.
+*hashCracker.py* takes in the hashcodes through command line arguments. If there are no command line arguments, then a message is given stating that there are no arguments, and the program terminates. If there is one argument, then the script will find the password without using a salt term. If there are two arguments, then the script will find the salt term given through the second argument, and prepend the decoded salt term to each password in *passList.txt* to find the decoded salted hash.
 
 To find the original password of a given unsalted hash, use the command:
 
@@ -53,7 +53,7 @@ If the given hashcode is salted and the salt term is known, use the command:
 
 hashCrackerOpt.py is a more efficient script that decodes hashes.
 
-In this script, a dictionary is created from passList.txt, where the hashed password if the key and the original password string is the value. Once the dictionary is created, the script will execute different functions based on the number of arguments. If there are no command line arguments, then the user is prompted to enter a hashcode to be decoded. If there is one argument, then the script will find the password without using a salt term. If there are two arguments, then the script will find the salt term given through the second argument, and prepend the decoded salt term to each password in *passList.txt* to find the decoded salted hash.
+In this script, a dictionary is created from passList.txt, where the hashed password if the key and the original password string is the value. Once the dictionary is created, the script will execute different functions based on the number of arguments. If there are no command line arguments, then a message is given stating that there are no arguments, and the program terminates. If there is one argument, then the script will find the password without using a salt term. If there are two arguments, then the script will find the salt term given through the second argument, and prepend the decoded salt term to each password in *passList.txt* to find the decoded salted hash.
 
 To find the original password of a given unsalted hash, use the command:
 

@@ -1,4 +1,6 @@
 # Hash Cracker
+### Author: Michael Narine
+#### Class: CSC 6980 - Blockchain & Applications
 
 Hash Cracker is a python script that will find the orginal password for a given hashcode.
 
@@ -54,6 +56,39 @@ hashCrackerOpt.py is a more efficient script that decodes hashes.
 In this script, a dictionary is created from passList.txt, where the hashed password if the key and the original password string is the value. Once the dictionary is created, the script will execute different functions based on the number of arguments. If there are no command line arguments, then the user is prompted to enter a hashcode to be decoded. If there is one argument, then the script will find the password without using a salt term. If there are two arguments, then the script will find the salt term given through the second argument, and prepend the decoded salt term to each password in *passList.txt* to find the decoded salted hash.
 
 After the first hashcode is decoded, the user is asked if they want to decoded another hash. Responding with 'Y' will prompt the user to enter another hashcode and decode it without recreating the dictionary, thus making the function truly O(1).
+
+To find the original password of a given unsalted hash, use the command:
+
+	python hashCrackerOpt.py hashcode
+
+*Example:*
+
+	python hashCrackerOpt.py 049fb98932d97ceb9c08e87d9e420c8fbd1294de
+
+*Returns:*
+
+	Ready
+        Checking for Password...
+        Password: buster02
+        Time Elapsed: 0.0780000686646
+        Number of Attempts: 1
+
+If the given hashcode is salted and the salt term is known, use the command:
+
+	python hashCrackerOpt.py hashcode salt_term
+
+*Example:*
+
+	python hashCrackerOpt.py ece4bb07f2580ed8b39aa52b7f7f918e43033ea1 f0744d60dd500c92c0d37c16174cc58d3c4bdd8e
+
+*Returns*
+
+	Checking For Salt...
+        Salt: slayer
+        Checking for Password...
+        Password: harib
+        Time Elapsed: 1.04600000381
+        Number of Attempts: 546155
 
 
 ## Assignment Results

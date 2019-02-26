@@ -70,12 +70,7 @@ def main():
     global count
 	# Get starting time
     start = time.time()
-    if len(sys.argv) == 1:			# if no arguments are given then ask for hashcode
-        hashIn = raw_input("\tEnter hashcode: ").lower()
-        start = time.time()			# reset start time to after the user has given an input
-        print("\tChecking for Password...")
-        res = getFromDict(hashIn)
-    elif len(sys.argv) == 2:		# if a single hashcode is provided
+    if len(sys.argv) == 2:		# if a single hashcode is provided
         print("\tChecking for Password...")
         hashIn = sys.argv[1].lower()
         res = getFromDict(hashIn)

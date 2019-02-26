@@ -99,20 +99,6 @@ def main():
     print("\tTime Elapsed: " + str(time.time() - start))
     print("\tNumber of Attempts: " + str(count))
 
-    ans = raw_input("Decode another hash? Y or N: ").upper()
-    while ans == 'Y':
-        count = 0
-        hashIn = raw_input("\tEnter hashcode: ").lower()
-        start = time.time()			# reset start time to after the user has given an input
-        print("\tChecking for Password...")
-        res = getFromDict(hashIn)
-        if res != "":
-            print("\tPassword: " + res)
-        else:
-            print("\tPassword Not Found")
-        print("\tTime Elapsed: " + str(time.time() - start))
-        print("\tNumber of Attempts: " + str(count))
-        ans = raw_input("Decode another hash? Y or N: ").upper()
 
 if __name__ == '__main__':
 	main()
